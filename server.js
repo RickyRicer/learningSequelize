@@ -13,6 +13,6 @@ app.use(routes);
 
 // Connect to the database prior to starting our server
 
-sequelize.sync().then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
 });
